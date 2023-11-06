@@ -1,0 +1,1 @@
+pytest  --template=html1/index.html --report=reports/report.html
