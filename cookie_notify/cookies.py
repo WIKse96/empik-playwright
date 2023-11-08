@@ -60,6 +60,8 @@ class Cookie:
         self.customize_link.click()
         self.acceptAll_btn.click()
         # sprawdź czy powiadomienie cookie jest ukryte, jeśli nie zrób screenshota
-        if not expect(self.acceptAll_btn).to_be_hidden():
+        if not self.acceptAll_btn:
             screenshot(self.page,__name__)
+        #Wykonanie asercji playwright
+        expect(self.acceptAll_btn).to_be_hidden()
 

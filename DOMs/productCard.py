@@ -30,6 +30,14 @@ class ProductCard:
 
     def productCart_assertions(self)->None:
 
-        #wykoannie asercji czy strona jest OK dla usera, jeśli nie to zrób screenshota
-        if not expect(self.aboutPrice_link).to_be_visible() or not expect(self.review_link).to_be_visible() or not expect(self.details_link).to_be_visible() or not expect(self.price).to_be_visible() or not expect(self.descr_link).to_be_visible():
+        # jeśli ktoryś element jest niewidoczny to zrób screenshota
+        if not self.aboutPrice_link and not self.review_link and not self.details_link and not self.price and not self.descr_link:
             screenshot(self.page, __name__)
+
+        # wykoannie asercji czy strona jest OK dla usera,
+        expect(self.aboutPrice_link).to_be_visible()
+        expect(self.review_link).to_be_visible()
+        expect(self.details_link).to_be_visible()
+        expect(self.price).to_be_visible()
+        expect(self.descr_link).to_be_visible()
+
