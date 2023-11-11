@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dokumentacja Testu Automatycznego</title>
+     <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F3F3F3;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        p, li {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tytuł testu: Zbiorczy test sprawdzenia pola input NIP na stronie empik.com/empikplace/wniosek</h1>
+        <h2>Cel</h2>
+        <p>Sprawdzić, czy pole input NIP na stronie działa poprawnie.</p>
+        <h2>Kroki</h2>
+        <ol>
+            <li>Otwórz stronę https://www.empik.com/empikplace/wniosek.</li>
+            <li>Zaakceptuj cookie.</li>
+            <li>Znajdź pole input NIP na stronie.</li>
+            <li>Wpisz litery w polu input NIP i kliknij "Pobierz dane".</li>
+            <li>Wpisz 10 znaków int w polu input NIP i kliknij "Pobierz dane".</li>
+            <li>Wpisz 1000 znaków int w polu input NIP i kliknij "Pobierz dane".</li>
+            <li>Wpisz 1 znak w polu input NIP i kliknij "Pobierz dane".</li>
+            <li>Wpisz znaki specjalne w polu input NIP i kliknij "Pobierz dane".</li>
+        </ol>
+        <h2>Oczekiwane wyniki</h2>
+        <ol>
+            <li>Alert powinien się wyświetlić, jeśli wpisane są litery.</li>
+            <li>Pole input NIP powinno przyjąć 10 znaków.</li>
+            <li>Pole input NIP nie powinno przyjąć 1000 znaków.</li>
+            <li>Pole input NIP nie powinno przyjąć znaków specjalnych.</li>
+            <li>Alert powinien się wyświetlić, jeśli wpisany jest 1 znak.</li>
+        </ol>
+        <h2>Kryteria akceptacji</h2>
+        <p>Test jest uznany za zakończony sukcesem, jeżeli wszystkie oczekiwane wyniki są spełnione.</p>
+        <h2>Wykonawca:</h2>
+        <p>Wiktor Ćwiertnia</p>
+    </div>
+</body>
+</html>

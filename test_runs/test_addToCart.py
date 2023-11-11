@@ -14,8 +14,10 @@ def test_addToCart(page)->None:
     cookie_obj.acceptCookie()
     #asercja czy znajdujemy sie na poprawnej stronie
     pc_obj.productCart_assertions()
+
     pc_obj.addToCart()
-    #przejście do checkout
+    #przejście do sposobu dostawy
+
     cart_obj.responseCheckout()
 
 

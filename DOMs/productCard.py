@@ -18,6 +18,7 @@ class ProductCard:
         self.review_link = page.get_by_role("link", name="Recenzje", exact=True)
         self.aboutPrice_link = page.get_by_role("button", name="Informacje o cenie")
 
+
     def goToProductCartpage(self)->None:
         self.page.goto(self.url)
         # sprawdź czy strona zwraca kod 200
@@ -40,4 +41,6 @@ class ProductCard:
         expect(self.details_link).to_be_visible()
         expect(self.price).to_be_visible()
         expect(self.descr_link).to_be_visible()
+
+        # !!!!DODAĆ ASERCJĘ CENY KOSZYKA I KARTY PRODUKTU!!!!
 
