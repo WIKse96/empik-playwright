@@ -55,7 +55,7 @@ class NIPform:
         # Wybór wartości w polu <select>
         self.nip_input.fill(value=nip_ints)
 
-        if country_of_register != 'PL':
+        if country_of_register != 'POL':
             # Pozostała część kodu bez zmian
             expect(self.bankBic_input).to_be_editable()
             expect(self.bankIban_input).to_be_editable()

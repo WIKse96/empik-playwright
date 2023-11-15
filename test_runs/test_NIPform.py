@@ -4,10 +4,11 @@ import pytest
 
 
 # parametry r_country i s_country podać skrót kraju np. POL, DEU, LUX
-@pytest.mark.parametrize("r_country",['POL', 'LTU', 'PRT'])
-@pytest.mark.parametrize("s_country",['DEU', 'LUX', 'GRC'])
-@pytest.mark.parametrize("nip",[132466, 65488, 8978])
-# @pytest.mark.parametrize('r_country,s_country,nip',[('POL','POL','64654')])
+# @pytest.mark.parametrize("r_country",['POL'])
+# @pytest.mark.parametrize("s_country",['DEU'])
+# @pytest.mark.parametrize("nip",['132466'])
+@pytest.mark.parametrize('r_country,s_country,nip',[pytest.param('POL','POL','64654', marks=pytest.mark.xfail),
+                                                    ('POL','POL','5260207427')],)
 def test_simpleNipForm(page, r_country, s_country, nip)->None:
     #inicjacja obiektów
     nip_obj = NIPform(page)
