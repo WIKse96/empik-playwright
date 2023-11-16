@@ -6,8 +6,8 @@ from time import sleep
 class ProductCard:
     def __init__(self, page) -> None:
         self.page = page
-        self.url = 'https://www.empik.com/reset,p1421190624,ebooki-i-mp3-p'
-        self.response = page.request.get(self.url)
+
+
 
         self.addToCart_f_btn = page.get_by_role("button", name="Dodaj do koszyka").first
         self.addToCart_semicheckout_btn = page.get_by_role("button", name="PRZEJDŹ DO KOSZYKA", exact=True)
@@ -19,10 +19,11 @@ class ProductCard:
         self.aboutPrice_link = page.get_by_role("button", name="Informacje o cenie")
 
 
-    def goToProductCartpage(self)->None:
-        self.page.goto(self.url)
+    def goToProductCartpage(self, url)->None:
+        self.page.goto(url)
+        response = self.page.request.get(url)
         # sprawdź czy strona zwraca kod 200
-        expect(self.response).to_be_ok()
+        expect(response).to_be_ok()
     def addToCart(self)->None:
         #dodanie produktu do koszyka
         self.addToCart_f_btn.click()

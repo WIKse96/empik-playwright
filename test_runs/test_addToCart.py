@@ -10,7 +10,7 @@ def test_addToCart(page)->None:
     cart_obj = Cart(page)
 
     #kliknięcie akceptacji w btn cookie
-    pc_obj.goToProductCartpage()
+    pc_obj.goToProductCartpage(url='https://www.empik.com/reset,p1421190624,ebooki-i-mp3-p')
     cookie_obj.acceptCookie()
     #asercja czy znajdujemy sie na poprawnej stronie
     pc_obj.productCart_assertions()
